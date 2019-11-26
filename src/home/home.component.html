@@ -5,7 +5,8 @@
         <div (click)="project()">
             <div></div>
             <div class="filter-back-cont"></div>
-            <a style="font-size: 3rem;">Sign up now</a>
+            <a *ngIf="isAuth" style="font-size: 3rem;">Sign up now</a>
+            <a *ngIf="!isAuth" style="font-size: 3rem;">Submit now</a>
         </div>
         <div>
             <div></div>
@@ -44,8 +45,7 @@
                                 around the globe.
                         </li>
                         <li>
-                            Please pay attention to your business model, ROI metrics, market trends, competitors, etc. 
-                            Most promising projects will be reviewed thoroughly and advised for further promotion.
+                            Please pay attention to your business model, ROI metrics, market trends, competitors, etc.
                         </li>
                     </ul>
                 </div>
@@ -54,9 +54,6 @@
                 <div style="min-height: 450px;padding-top: 20px;">
                     <ul>
                         <li>Submit a pitch and we’ll help you with the promotion.</li>
-                        <li>
-                            Our main focus is startups at the growth stage with an emphasis on blockchain technology and FinTech.
-                        </li>
                         <li>
                             Feel free to mention the funds you've already invested in the project and the sum that's 
                             required for the next step in your presentation materials.
@@ -82,9 +79,8 @@
             <div></div>
             <div class="right-info">
                 <div></div>
-                <h1>Crowdfunding platform</h1>
                 <p>
-                    Because of our profound approach to each client, more than 70% of submitted campaigns reach their funding goal.
+                    Our main focus is startups at the growth stage with an emphasis on blockchain technology and FinTech.
                 </p>                
             </div>
         </div>
@@ -92,9 +88,8 @@
             <div></div>
             <div class="right-info">
                 <div></div>
-                <h1>Crowdfunding platform</h1>
                 <p>
-                    Because of our profound approach to each client, more than 70% of submitted campaigns reach their funding goal.
+                    Most promising projects will be reviewed thoroughly and advised for further promotion.
                 </p>
             </div>
         </div>
@@ -133,7 +128,7 @@
     </form>
 
     <form *ngIf="!isAuth" [formGroup]="feedbackForm2" class="pr-form" (ngSubmit)="onSubmit2()">
-        <h1 style="width: 100%;">If You have any questions</h1>
+        <h1 style="width: 100%;">If You have any questions <br> or business offer</h1>
         <div class="f-control">
             <mat-form-field>
                 <textarea formControlName="message" matInput placeholder="Message" class="pr-full-width" required></textarea>

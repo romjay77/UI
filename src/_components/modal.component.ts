@@ -26,7 +26,21 @@ import { AlertService, UserService, ModalService } from '../_services';
             </div>
         </div>
         <div class="jw-modal-background"></div>
-    </form>`,
+    </form>
+    <style>
+    ::ng-deep .mat-hint {
+        color: aliceblue !important;
+      }
+      ::ng-deep .mat-form-field{
+        color: aliceblue;
+      }
+      ::ng-deep .mat-form-field-underline {
+        background-color: aliceblue !important;
+      } 
+      ::ng-deep .mat-form-field-label {
+        color: aliceblue !important;
+      }
+    </style>`,
     styleUrls: ['modal.component.less'] 
 })
 export class ModalComponent implements OnInit, OnDestroy {
