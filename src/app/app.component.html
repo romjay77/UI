@@ -1,0 +1,52 @@
+
+<mat-drawer-container style="height: 100%;"> 
+    <mat-drawer #sidenav [mode]="push">
+      <div class="banner-men">
+        <a routerLink="/" class="nav-link" style="padding: 0 10px;">
+          <img style="padding-right: 10px;" width="40" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==" />
+          <span>Crypto Promoter</span>
+        </a>        
+      </div>
+        <div class="custom-toggle-menu">
+            <a *ngIf="!isAuth" style="background-color: #3c5172;" class="nav-link men-link" routerLink="/user"> {{ currentUser.username }} </a>
+            <a *ngIf="isAuth" style="background-color: rgb(85, 144, 133);" class="nav-link men-link" routerLink="/login">LogIn</a>
+            <a *ngIf="!isAuth" style="background-color: rgb(85, 144, 133);" class="nav-link men-link" (click)="logout()">LogOut</a>
+            <a class="nav-link men-link" style="background-color: rgb(98, 176, 143);" routerLink="/project">Register the project</a>
+        </div>
+        <div class="footer-men">
+          <p>
+              Copyright © 2019 cryptopromoter.io. All rights reserved.       
+          </p>
+        </div>
+    </mat-drawer>
+  
+    <mat-drawer-content>
+      <div class="toolbar" role="banner">
+        <div>
+            <a routerLink="/" class="nav-link">
+              <img width="40" alt="Angular Logo" src="/assets/logo.png" />
+              <span class="logo_n" style="padding-top: 10px;">Crypto Promoter <br>
+                <span style="text-transform: uppercase;font-size: .96rem;">elevate your project</span>
+              </span>
+            </a>   
+            <!-- <span style="padding-left: 72px;text-transform: uppercase;color: #d9edec;
+            font-size: .96rem;">elevate your project</span> -->
+        </div>
+        <div class="spacer"></div>
+        <div class="custom-toggle">
+            <a *ngIf="!isAuth" style="background-color: #3c5172;" class="nav-link men-link" routerLink="/user"> {{ currentUser.username }} </a>
+            <a *ngIf="isAuth" style="background-color: rgb(85, 144, 133);" class="nav-link men-link" routerLink="/login">LogIn</a>
+            <a *ngIf="!isAuth" style="background-color: rgb(85, 144, 133);" class="nav-link men-link" (click)="logout()">LogOut</a>
+            <a class="nav-link men-link" style="background-color: rgb(98, 176, 143);" routerLink="/project">Register the project</a>
+        </div>
+        <div class="custom-toggle-show">
+            <button class="toggle_btn" mat-fab color="primary" (click)="sidenav.toggle()">
+                <mat-icon style="font-size: 2.2rem !important; height: 35px !important; width: 35px !important;">add</mat-icon>
+            </button>
+        </div>
+      </div>
+      
+      <alert></alert>
+      <router-outlet></router-outlet>
+    </mat-drawer-content>
+  </mat-drawer-container>

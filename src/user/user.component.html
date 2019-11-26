@@ -1,0 +1,123 @@
+<div class="container container_m">
+    <div class="blk">
+        <div *ngIf="isAdnin" style="display: flex; justify-content: center; margin: 2vh 2vw;">
+            <a mat-raised-button color="accent" routerLink="/admin"> Admin panel</a>
+        </div>
+        <h2>Hi {{currentUser.fullName}}.</h2>
+        <mat-tab-group color="accent" >
+            <mat-tab label="{{ currentUser.fullName }}">
+                <form [formGroup]="changeForm" (ngSubmit)="onChangeFName()">
+                    <div class="form-group">
+                        <mat-form-field>
+                            <input matInput placeholder="Full name" formControlName="fullName" required>
+                            <mat-hint>Enter your full name...</mat-hint>
+                            <mat-error *ngIf="changeForm.controls.fullName.invalid">
+                                Full name is required
+                            </mat-error>
+                        </mat-form-field>
+                    </div>
+                    <div class="form-group">
+                        <button [disabled]="loading" mat-raised-button color="primary">
+                            <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+                            Change
+                        </button>
+                    </div>
+                </form>
+            </mat-tab>
+            <mat-tab label="{{ currentUser.email }}">
+                <form [formGroup]="changeForm" (ngSubmit)="onChangeEmail()">
+                    <div class="form-group">
+                        <mat-form-field>
+                            <input matInput placeholder="Email" formControlName="email" required>
+                            <mat-hint>Enter your email...</mat-hint>
+                            <mat-error *ngIf="changeForm.controls.email.invalid">
+                                    {{getEmailErrorMessage()}}
+                            </mat-error>
+                        </mat-form-field>
+                    </div>
+                    <div class="form-group">
+                        <button [disabled]="loading" mat-raised-button color="primary">
+                            <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+                            Change
+                        </button>
+                    </div>
+                </form>
+            </mat-tab>
+            <mat-tab label="{{ currentUser.username }}">
+                <form [formGroup]="changeForm" (ngSubmit)="onChangeUserName()">
+                    <div class="form-group">
+                        <mat-form-field>
+                            <input matInput placeholder="Username" formControlName="username" required>
+                            <mat-hint>Enter your username...</mat-hint>
+                            <mat-error *ngIf="changeForm.controls.username.invalid">
+                                Username is required
+                            </mat-error>
+                        </mat-form-field>        
+                    </div>
+                    <div class="form-group">
+                        <button [disabled]="loading" mat-raised-button color="primary">
+                            <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+                            Change
+                        </button>
+                    </div>
+                </form>
+            </mat-tab>
+            <mat-tab label="Password">
+                <form [formGroup]="changeForm" (ngSubmit)="onChangePassword()">
+                    <div class="form-group">
+                        <mat-form-field>
+                            <input matInput placeholder="New password" [type]="hide ? 'password' : 'text'" formControlName="newPassword" required>
+                            <a mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                                <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                            </a>
+                            <mat-error *ngIf="changeForm.controls.newPassword.invalid">
+                                {{getPasswordErrorMessage()}}
+                            </mat-error>
+                        </mat-form-field>
+                    </div>
+                    <div class="form-group">
+                        <button [disabled]="loading" mat-raised-button color="primary">
+                            <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+                            Change
+                        </button>
+                    </div>
+                </form>
+            </mat-tab>
+            <mat-tab label="Projects">
+                <div style="padding: 3vh 3vw;overflow-y: auto;max-height: 40vh;">
+                    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" style="width: 100%;">
+                        <ng-container matColumnDef="index">
+                            <th mat-header-cell *matHeaderCellDef> No. </th>
+                            <td mat-cell *matCellDef="let index = index"> {{index}} </td>
+                        </ng-container>
+                        <ng-container matColumnDef="name">
+                            <th mat-header-cell *matHeaderCellDef> Name </th>
+                            <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+                        </ng-container>
+                        <ng-container matColumnDef="desc">
+                            <th mat-header-cell *matHeaderCellDef> Description </th>
+                            <td mat-cell *matCellDef="let element"> {{sliceDescription(element.description)}}...</td>
+                        </ng-container>
+                        <ng-container matColumnDef="act">
+                            <th mat-header-cell *matHeaderCellDef> Actiom </th>
+                            <td mat-cell *matCellDef="let element"> 
+                                <button [disabled]="loading" mat-raised-button color="accent" (click)="openModal(element.id, element.name, element.filePath)" >
+                                    Delete
+                                </button>
+                            </td>
+                        </ng-container>
+                        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                    </table>  
+                </div>
+
+                <jw-modal (refreshEvent)="refresh($event)" id="custom-modal-1">
+                    <input type="text" [(ngModel)]="deletedInput" hidden id="repeatName"/>
+                    <input type="text" [(ngModel)]="deletedId" hidden id="id"/>
+                    <input type="text" [(ngModel)]="deletedFilePath" hidden id="path"/>
+                </jw-modal>
+
+            </mat-tab>
+        </mat-tab-group>
+    </div>
+</div>

@@ -1,0 +1,38 @@
+<div class="container">
+    <div class="container_m">
+        <div class="login-container blk">
+            <h2>LogIn</h2>
+            <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+                <div class="form-gr">
+                    <mat-form-field>
+                        <input matInput placeholder="Username" formControlName="username" required>
+                        <mat-hint>Enter your username...</mat-hint>
+                        <mat-error *ngIf="loginForm.controls.username.invalid">
+                            Username is required
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="form-gr">
+                    <mat-form-field>
+                        <input matInput placeholder="Password" [type]="hide ? 'password' : 'text'" formControlName="password" required>
+                        <a mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                            <!-- hide -->
+                        </a>
+                        <mat-hint>Enter your password...</mat-hint>
+                        <mat-error *ngIf="loginForm.controls.password.invalid">
+                            Password is required
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="form-gr">
+                    <button [disabled]="loading" mat-raised-button color="primary">
+                        <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+                        Login
+                    </button>
+                    <button routerLink="/register" mat-raised-button>Register</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

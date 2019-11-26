@@ -1,0 +1,183 @@
+<div class="main-back">
+    <div class="filter-back"></div>
+    <div class="img-back"></div>
+    <div class="back-container">
+        <div (click)="project()">
+            <div></div>
+            <div class="filter-back-cont"></div>
+            <a style="font-size: 3rem;">Sign up now</a>
+        </div>
+        <div>
+            <div></div>
+            <div class="filter-back-cont"></div>
+            <h2 style="font-size: 2rem;">
+                Elevate your project to a whole new level
+            </h2>
+            <p style="font-size: 1.5rem;">
+                Connect with the investors and get your project funded.
+            </p>
+        </div>
+    </div>
+</div>
+
+<div class="info-container">
+    <div>
+        <h1>Boost your startup </h1>
+        <mat-tab-group color="accent" [color]="color">
+            <mat-tab label="SUBMIT">
+                <div style="min-height: 450px;padding-top: 20px;">
+                    <p>
+                        We bring together startups looking for financial support and investors with the available capital, 
+                        contacts and knowledge to help you succeed.
+                    </p>
+                    <ul>
+                        <li>Add a pitch/presentation of your business using our quick and easy registration form.</li>
+                        <li>The submitted materials will be reviewed within 2 weeks.</li>
+                    </ul>
+                </div>
+            </mat-tab>
+            <mat-tab label="ADVISOR SUPPORT">
+                <div style="min-height: 450px;padding-top: 20px;">
+                    <ul>
+                        <li>
+                            Your project will be reviewed by the investors and experts in crypto space
+                                around the globe.
+                        </li>
+                        <li>
+                            Please pay attention to your business model, ROI metrics, market trends, competitors, etc. 
+                            Most promising projects will be reviewed thoroughly and advised for further promotion.
+                        </li>
+                    </ul>
+                </div>
+            </mat-tab>
+            <mat-tab label="GET FUNDED">
+                <div style="min-height: 450px;padding-top: 20px;">
+                    <ul>
+                        <li>Submit a pitch and we’ll help you with the promotion.</li>
+                        <li>
+                            Our main focus is startups at the growth stage with an emphasis on blockchain technology and FinTech.
+                        </li>
+                        <li>
+                            Feel free to mention the funds you've already invested in the project and the sum that's 
+                            required for the next step in your presentation materials.
+                        </li>
+                        <li>Be ready to present your project in a transparent way.</li>
+                    </ul>
+                </div>
+            </mat-tab>
+        </mat-tab-group>
+    </div>
+    <div>
+        <div id="one-t" class="tab-right-bck" style="display: flex;">
+            <div></div>
+            <div class="right-info">
+                <div></div>
+                <h1>Crowdfunding platform</h1>
+                <p>
+                    Because of our profound approach to each client, more than 70% of submitted campaigns reach their funding goal.
+                </p>
+            </div>
+        </div>
+        <div id="two-t" class="tab-right-bck">
+            <div></div>
+            <div class="right-info">
+                <div></div>
+                <h1>Crowdfunding platform</h1>
+                <p>
+                    Because of our profound approach to each client, more than 70% of submitted campaigns reach their funding goal.
+                </p>                
+            </div>
+        </div>
+        <div id="three-t" class="tab-right-bck">
+            <div></div>
+            <div class="right-info">
+                <div></div>
+                <h1>Crowdfunding platform</h1>
+                <p>
+                    Because of our profound approach to each client, more than 70% of submitted campaigns reach their funding goal.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="feedback">
+    <form *ngIf="isAuth" [formGroup]="feedbackForm" class="pr-form" (ngSubmit)="onSubmit()">
+        <h1 style="width: 100%;">If You have any questions</h1>
+        <div class="f-control">
+            <mat-form-field>
+                <input formControlName="fullName" matInput placeholder="Full name" class="pr-full-width" required>
+                <mat-hint>Enter full name...</mat-hint>
+                <mat-error *ngIf="feedbackForm.controls.fullName.invalid">
+                    Full name is required
+                </mat-error>
+            </mat-form-field>
+        </div>
+        <div class="f-control">
+            <mat-form-field>
+                <input matInput placeholder="Email" formControlName="email" type="email" required>
+                <mat-hint>Enter your email...</mat-hint>
+                <mat-error *ngIf="feedbackForm.controls.email.invalid">{{getEmailErrorMessage()}}</mat-error>
+            </mat-form-field>
+        </div>
+        <div class="f-control">
+            <mat-form-field>
+                <textarea formControlName="message" matInput placeholder="Message" class="pr-full-width" required></textarea>
+                <mat-hint>Enter message...</mat-hint>
+                <mat-error *ngIf="feedbackForm.controls.message.invalid">
+                    Message is required
+                </mat-error>
+            </mat-form-field>
+        </div>        
+        <button mat-raised-button color="primary">Send</button>
+    </form>
+
+    <form *ngIf="!isAuth" [formGroup]="feedbackForm2" class="pr-form" (ngSubmit)="onSubmit2()">
+        <h1 style="width: 100%;">If You have any questions</h1>
+        <div class="f-control">
+            <mat-form-field>
+                <textarea formControlName="message" matInput placeholder="Message" class="pr-full-width" required></textarea>
+                <mat-hint>Enter message...</mat-hint>
+                <mat-error *ngIf="feedbackForm2.controls.message.invalid">
+                    Message is required
+                </mat-error>
+            </mat-form-field>
+        </div>        
+        <button mat-raised-button color="primary">Send</button>
+    </form>
+</div>
+
+<div class="footer">
+    <div></div>
+    <div>
+        <p>
+            Copyright © 2019 cryptopromoter.io. All rights reserved.
+        </p>
+        <p>
+            Crypto Promoter is a software as a service crowdfunding platform. Crypto Promoter is not a registered 
+            broker-dealer and does not offer investment advice or advise on the raising of capital through securities 
+            offerings. Crypto Promoter does not recommend or otherwise suggest that any investor make an investment 
+            in a particular company, or that any company offers securities to a particular investor. All investors 
+            should make their own determination of whether or not to make any investment based on their own 
+            independent evaluation and analysis. Crypto Promoter takes no part in the negotiation or execution 
+            of transactions for the purchase or sale of securities, and at no time has possession of funds or 
+            securities. No securities transactions are executed or negotiated on or through the Crypto Promoter 
+            platform. Crypto Promoter receives no compensation in connection with the purchase or sale of securities. 
+            Crypto Promoter does not provide legal, accounting or tax advice. Any representation or implication 
+            to the contrary is expressly disclaimed.
+        </p>
+    </div>
+</div>
+
+<div *ngIf="isAccept" class="cookie-show">
+    <p> 
+        Notice: This website uses cookies. If you want to know more or withdraw your consent to all or some of the cookies, 
+        please refer to the 
+        <a routerLink="/cookie">cookie policy</a>. 
+        By clicking “I Accept”, scrolling this page, clicking on a link or otherwise continuing to browse, 
+        you agree to the use of cookies. 
+    </p>
+    <button style="max-height: 40px; min-width: 80px;" mat-raised-button color="primary" (click)="cookieClose()"> 
+        I Accept 
+    </button>
+</div>
