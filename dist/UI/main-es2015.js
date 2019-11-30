@@ -2057,7 +2057,7 @@ let HomeComponent = class HomeComponent {
                     this.alertService.error(error);
                     this.loading = false;
                 });
-                this.feedbackForm2.reset();
+                this.feedbackForm.reset();
             });
         });
     }

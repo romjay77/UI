@@ -1822,7 +1822,7 @@
                                 _this.alertService.error(error);
                                 _this.loading = false;
                             });
-                            _this.feedbackForm2.reset();
+                            _this.feedbackForm.reset();
                         });
                     });
                 };

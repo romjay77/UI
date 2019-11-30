@@ -35,16 +35,16 @@ exports.sendNotifyUser = function (data) {
       preview: false,   // <---- Question
       juice: true,
       message: {
-        from: 'romjay77@gmail.com'
+        from: 'admin@cryptopromoter.io'
       },
       transport: {
       //jsonTransport: true,  // <---- Question
       secure: true,
-      host: 'smtp.gmail.com',
+      host: 'mail.privateemail.com',
       port: 465,
       auth: {
-        user: 'romjay77@gmail.com',
-        pass: 'raman1234anaeB'
+        user: 'admin@cryptopromoter.io',
+        pass: 'crypto2020'
       }},
       htmlToText: false, // <---- Question
       textOnly: false,   // <---- Question
@@ -86,16 +86,16 @@ exports.sendMessageUser = function (data) {
       preview: false,   // <---- Question
       juice: true,
       message: {
-        from: 'romjay77@gmail.com'
+        from: 'admin@cryptopromoter.io'
       },
       transport: {
       //jsonTransport: true,  // <---- Question
       secure: true,
-      host: 'smtp.gmail.com',
+      host: 'mail.privateemail.com',
       port: 465,
       auth: {
-        user: 'romjay77@gmail.com',
-        pass: 'raman1234anaeB'
+        user: 'admin@cryptopromoter.io',
+        pass: 'crypto2020'
       }},
       htmlToText: false, // <---- Question
       textOnly: false,   // <---- Question
@@ -137,16 +137,16 @@ exports.sendNotifyAdmin = function (file, adminmail, data) {
     preview: false,   // <---- Question
     juice: true,
     message: {
-      from: 'romjay77@gmail.com'
+      from: 'admin@cryptopromoter.io'
     },
     transport: {
     //jsonTransport: true,  // <---- Question
     secure: true,
-    host: 'smtp.gmail.com',
+    host: 'mail.privateemail.com',
     port: 465,
     auth: {
-      user: 'romjay77@gmail.com',
-      pass: 'raman1234anaeB'
+      user: 'admin@cryptopromoter.io',
+      pass: 'crypto2020'
     }},
     htmlToText: false, // <---- Question
     textOnly: false,   // <---- Question
@@ -194,16 +194,16 @@ exports.sendMessageAdmin = function (adminmail, data) {
     preview: false,   // <---- Question
     juice: true,
     message: {
-      from: 'romjay77@gmail.com'
+      from: 'admin@cryptopromoter.io'
     },
     transport: {
     // jsonTransport: true,  // <---- Question
     secure: true,
-    host: 'smtp.gmail.com',
+    host: 'mail.privateemail.com',
     port: 465,
     auth: {
-      user: 'romjay77@gmail.com',
-      pass: 'raman1234anaeB'
+      user: 'admin@cryptopromoter.io',
+      pass: 'crypto2020'
     }},
     htmlToText: false, // <---- Question
     textOnly: false,   // <---- Question
