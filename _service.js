@@ -35,16 +35,16 @@ exports.sendNotifyUser = function (data) {
       preview: false,   // <---- Question
       juice: true,
       message: {
-        from: 'admin@cryptopromoter.io'
+        from: 'cryptopromoter.io@gmail.com'
       },
       transport: {
       //jsonTransport: true,  // <---- Question
       secure: true,
-      host: 'mail.privateemail.com',
+      host: 'smtp.gmail.com',
       port: 465,
       auth: {
-        user: 'admin@cryptopromoter.io',
-        pass: 'crypto2020'
+        user: 'cryptopromoter.io@gmail.com',
+        pass: 'cryptopromoter1'
       }},
       htmlToText: false, // <---- Question
       textOnly: false,   // <---- Question
@@ -86,16 +86,16 @@ exports.sendMessageUser = function (data) {
       preview: false,   // <---- Question
       juice: true,
       message: {
-        from: 'admin@cryptopromoter.io'
+        from: 'cryptopromoter.io@gmail.com'
       },
       transport: {
       //jsonTransport: true,  // <---- Question
       secure: true,
-      host: 'mail.privateemail.com',
+      host: 'smtp.gmail.com',
       port: 465,
       auth: {
-        user: 'admin@cryptopromoter.io',
-        pass: 'crypto2020'
+        user: 'cryptopromoter.io@gmail.com',
+        pass: 'cryptopromoter1'
       }},
       htmlToText: false, // <---- Question
       textOnly: false,   // <---- Question
@@ -137,16 +137,16 @@ exports.sendNotifyAdmin = function (file, adminmail, data) {
     preview: false,   // <---- Question
     juice: true,
     message: {
-      from: 'admin@cryptopromoter.io'
+      from: 'cryptopromoter.io@gmail.com'
     },
     transport: {
     //jsonTransport: true,  // <---- Question
     secure: true,
-    host: 'mail.privateemail.com',
+    host: 'smtp.gmail.com',
     port: 465,
     auth: {
-      user: 'admin@cryptopromoter.io',
-      pass: 'crypto2020'
+      user: 'cryptopromoter.io@gmail.com',
+      pass: 'cryptopromoter1'
     }},
     htmlToText: false, // <---- Question
     textOnly: false,   // <---- Question
@@ -194,16 +194,16 @@ exports.sendMessageAdmin = function (adminmail, data) {
     preview: false,   // <---- Question
     juice: true,
     message: {
-      from: 'admin@cryptopromoter.io'
+      from: 'cryptopromoter.io@gmail.com'
     },
     transport: {
-    // jsonTransport: true,  // <---- Question
+    //jsonTransport: true,  // <---- Question
     secure: true,
-    host: 'mail.privateemail.com',
+    host: 'smtp.gmail.com',
     port: 465,
     auth: {
-      user: 'admin@cryptopromoter.io',
-      pass: 'crypto2020'
+      user: 'cryptopromoter.io@gmail.com',
+      pass: 'cryptopromoter1'
     }},
     htmlToText: false, // <---- Question
     textOnly: false,   // <---- Question
