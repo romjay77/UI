@@ -41,7 +41,7 @@ exports.sendNotifyUser = function (data) {
       //jsonTransport: true,  // <---- Question
       secure: true,
       host: 'smtp.gmail.com',
-      port: 465,
+      port: 25,
       auth: {
         user: 'cryptopromoter.io@gmail.com',
         pass: 'cryptopromoter1'
@@ -92,7 +92,7 @@ exports.sendMessageUser = function (data) {
       //jsonTransport: true,  // <---- Question
       secure: true,
       host: 'smtp.gmail.com',
-      port: 465,
+      port: 25,
       auth: {
         user: 'cryptopromoter.io@gmail.com',
         pass: 'cryptopromoter1'
@@ -143,7 +143,7 @@ exports.sendNotifyAdmin = function (file, adminmail, data) {
     //jsonTransport: true,  // <---- Question
     secure: true,
     host: 'smtp.gmail.com',
-    port: 465,
+    port: 25,
     auth: {
       user: 'cryptopromoter.io@gmail.com',
       pass: 'cryptopromoter1'
@@ -200,7 +200,7 @@ exports.sendMessageAdmin = function (adminmail, data) {
     //jsonTransport: true,  // <---- Question
     secure: true,
     host: 'smtp.gmail.com',
-    port: 465,
+    port: 25,
     auth: {
       user: 'cryptopromoter.io@gmail.com',
       pass: 'cryptopromoter1'
