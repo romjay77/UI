@@ -25,20 +25,30 @@ app.post('/uploadFile', (req,res) => {
     let name = service.uploadFile(req.files['uploads']);
 
     let admins = req.body.amails.split(',');
-    admins.forEach(email => {
-        service.sendNotifyAdmin(name, email, req.body);
-    });
-    service.sendNotifyUser(req.body);
+    try {
+        admins.forEach(email => {
+            service.sendNotifyAdmin(name, email, req.body);
+        });
+        service.sendNotifyUser(req.body);
+    } catch (error) {
+        console.log(error);
+        alert(error);
+    }
 
     res.json({path: name});
 });
 
 app.post('/sendMessage', (req,res) => {
     let admins = req.body.amails.split(',');
-    admins.forEach(email => {
-        service.sendMessageAdmin(email, req.body);
-    });
-    service.sendMessageUser(req.body);
+    try {
+        admins.forEach(email => {
+            service.sendMessageAdmin(email, req.body);
+        });
+        service.sendMessageUser(req.body);
+    } catch (error) {
+        console.log(error);
+        alert(error);
+    }
     
     res.json();
 });
