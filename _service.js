@@ -69,7 +69,7 @@ exports.sendNotifyUser = function (data) {
       attachments: [
         {
           filename: 'bck.png',
-          path: '../UI/dist/UI/assets/bck.png',
+          path: path.resolve('dist/UI/assets/bck.png'),
           cid: 'bck.png'
         }]
       },
@@ -120,7 +120,7 @@ exports.sendMessageUser = function (data) {
       attachments: [
         {
           filename: 'bck.png',
-          path: '../UI/dist/UI/assets/bck.png',
+          path: path.resolve('dist/UI/assets/bck.png'),
           cid: 'bck.png'
         }]
       },
@@ -175,7 +175,7 @@ exports.sendNotifyAdmin = function (file, adminmail, data) {
       },
       {
         filename: 'bck.png',
-        path: '../UI/dist/UI/assets/bck.png',
+        path: path.resolve('dist/UI/assets/bck.png'),
         cid: 'bck.png'
       }]
     },
@@ -228,7 +228,7 @@ exports.sendMessageAdmin = function (adminmail, data) {
     attachments: [
       {
         filename: 'bck.png',
-        path: '../UI/dist/UI/assets/bck.png',
+        path: path.resolve('dist/UI/assets/bck.png'),
         cid: 'bck.png'
       }]
     },
