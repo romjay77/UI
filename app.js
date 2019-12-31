@@ -2,6 +2,7 @@ const express = require('express');
 const path = require('path');
 const bodyParser = require("body-parser");
 const fileUpload = require('express-fileupload');
+const fs = require('fs');
 
 const service = require("./_service");
 
@@ -23,6 +24,13 @@ app.post('/deleteFile', (req,res) => {
 
 app.post('/uploadFile', (req,res) => {
     let name = service.uploadFile(req.files['uploads']);
+    let i = 0;
+
+    if (!fs.existsSync(name)){
+        while(!fs.existsSync(name)) {
+            i++
+        }
+    }
 
     let admins = req.body.amails.split(',');
     try {
